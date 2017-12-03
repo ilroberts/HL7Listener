@@ -1,7 +1,6 @@
 package com.ilroberts.HL7Listener;
 
 import ca.uhn.hl7v2.model.Message;
-import ca.uhn.hl7v2.model.v26.datatype.XPN;
 import ca.uhn.hl7v2.model.v26.message.ADT_A01;
 import ca.uhn.hl7v2.model.v26.segment.MSH;
 import com.ilroberts.HL7Listener.transformer.A01Transformer;
