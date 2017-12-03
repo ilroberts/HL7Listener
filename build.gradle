@@ -1,0 +1,50 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.ilroberts'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-core
+    compile group: 'org.apache.camel', name: 'camel-core', version: '2.20.1'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-spring
+    compile group: 'org.apache.camel', name: 'camel-spring', version: '2.20.1'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-netty4
+    compile group: 'org.apache.camel', name: 'camel-netty4', version: '2.20.1'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-hl7
+    compile group: 'org.apache.camel', name: 'camel-hl7', version: '2.20.1'
+
+    // https://mvnrepository.com/artifact/ca.uhn.hapi/hapi-base
+    compile group: 'ca.uhn.hapi', name: 'hapi-base', version: '2.3'
+    // https://mvnrepository.com/artifact/ca.uhn.hapi/hapi-structures-v26
+    compile group: 'ca.uhn.hapi', name: 'hapi-structures-v26', version: '2.3'
+
+    // https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-base
+    compile group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-base', version: '3.1.0'
+    // https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-dstu3
+    compile group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-structures-dstu3', version: '3.1.0'
+
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-test
+    testCompile group: 'org.apache.camel', name: 'camel-test', version: '2.20.1'
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
